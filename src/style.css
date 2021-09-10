@@ -161,35 +161,9 @@ body {
     border: 1px solid transparent;
   }
   
-  .custom-progress {
-    height: 7px;
-    border-radius: 0;
-  }
-  
-  .custom-progress .progress-bar {
-    background: #000;
-  }
   
  
  
-  
-  @-webkit-keyframes animate-loading {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes animate-loading {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
   
   /*--------------------------------------------------------------
   # Header
@@ -199,46 +173,7 @@ body {
     background: #0d1e2d;
   }
   
-  .custom-navmenu .custom-menu, .custom-navmenu .custom-menu li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .custom-navmenu .custom-menu li {
-    margin-bottom: 0;
-    font-size: 20px;
-  }
-  
-  .custom-navmenu .custom-menu li a {
-    color: #fff;
-    padding: 10px 0 !important;
-  }
-  
-  .custom-navmenu .custom-menu li a:hover {
-    text-decoration: none;
-  }
-  
-  .custom-navmenu .custom-menu li.active a {
-    text-decoration: underline;
-  }
-  
-  .custom-navmenu h3 {
-    font-size: 20px;
-    color: #fff;
-  }
-  
-  .custom-navmenu p {
-    color: rgba(255, 255, 255, 0.6);
-  }
-  
-  .custom-navmenu a {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  .custom-navmenu a:hover {
-    color: #fff;
-  }
+
   
   /* Custom Navbar */
   .custom-navbar {
