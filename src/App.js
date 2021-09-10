@@ -42,7 +42,7 @@ function App(props) {
           </a>
         </div>
       </nav>
-      <div className="container col-sm-6 col-md-4 col-lg-4">
+      <div className="container col-sm-6 col-md-4 col-lg-5">
         <form className="input-group mb-3">
           <input
             placeholder="search for your favorite recipe, example try: burger"
