@@ -1,5 +1,5 @@
 # Recipe search app
-This project is deployed at [Recipe search app](https://613b4e7352ba39c67b5ba26a--recipeappbyme.netlify.app/)
+This project is deployed at [Recipe search app](https://613b808673ad5400c2c6b649--recipeappbyme.netlify.app/)
 
 # Technologies
 * Made with ReactJS
