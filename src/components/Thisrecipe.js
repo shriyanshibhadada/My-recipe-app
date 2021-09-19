@@ -1,18 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";
-
+import Navbar from "./Navbar";
 function Thisrecipe(props) {
   const ingredients = props.recipe;
   return (
     <div>
-      <nav className="navbar navbar-light custom-navbar">
-        <div className="container">
-          <a className="navbar-brand" href="/">
-            MyRecipeApp.
-          </a>
-        </div>
-      </nav>
+      <Navbar />
       <section className="section">
         <div className="site-section pb-0">
           <div className="container">

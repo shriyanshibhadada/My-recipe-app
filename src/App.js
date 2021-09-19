@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Allrecipes from "./components/Allrecipes";
+import Navbar from "./components/Navbar";
+import Content from "./components/Content";
+import Search from "./components/Search";
 
-function App(props) {
+function App() {
   const user = JSON.parse(process.env.REACT_APP_USERNAME);
   const APP_ID = user.ID;
   const APP_KEY = user.KEY;
@@ -35,54 +37,13 @@ function App(props) {
 
   return (
     <div>
-      <nav className="navbar navbar-light custom-navbar">
-        <div className="container">
-          <a className="navbar-brand" href="/">
-            MyRecipeApp.
-          </a>
-        </div>
-      </nav>
-      <div className="container col-sm-6 col-md-4 col-lg-5">
-        <form className="input-group mb-3">
-          <input
-            placeholder="search for your favorite recipe, example try: burger"
-            type="text"
-            onChange={handleChange}
-            value={search}
-            className="form-control"
-          />
-          <button className="btn btn-outline-secondary" onClick={submitQuery}>
-            submit
-          </button>
-        </form>
-      </div>
-
-      <main id="main">
-        <section className="section site-portfolio">
-          <div className="container">
-            <div
-              id="portfolio-grid"
-              className="row no-gutter"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              {recipe.map((item, index) => {
-                return (
-                  <Allrecipes
-                    id={index}
-                    key={index}
-                    title={item.recipe.label}
-                    cuisineType={item.recipe.cuisineType}
-                    image={item.recipe.image}
-                    recipe={item.recipe.ingredients}
-                    dishType={item.recipe.dishType}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      </main>
+      <Navbar />
+      <Search
+        handleChange={handleChange}
+        search={search}
+        submitQuery={submitQuery}
+      />
+      <Content recipe={recipe} />
     </div>
   );
 }
