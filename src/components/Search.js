@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Search(props) {
   return (
     <div className="container">
-      <div className = "col-md-4 col-sm-6 col-lg-5 search">
+      <div className = "col-md-6 col-sm-6 col-lg-6 search">
         <form className="input-group mb-3">
           <input
             placeholder="search for your favorite recipe, example try: burger"

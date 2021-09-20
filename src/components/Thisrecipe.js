@@ -2,8 +2,16 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";
 import Navbar from "./Navbar";
-function Thisrecipe(props) {
-  const ingredients = props.recipe;
+import { useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
+
+function Thisrecipe() {
+  let history = useHistory();
+  const recipeId = window.location.pathname.split('/')[1];
+  const recipe = useSelector(state => state)[recipeId].recipe;
+  const goBack = () => {
+    history.push("/");
+  }
   return (
     <div>
       <Navbar />
@@ -13,10 +21,10 @@ function Thisrecipe(props) {
             <div className="row align-items-stretch">
               <div className="col-md-8" data-aos="fade-up">
                 <img
-                  src={props.image}
+                  src={recipe.image}
                   style={{ width: "100%" }}
                   alt="/"
-                  class="img-fluid"
+                  className="img-fluid"
                 />
               </div>
               <div
@@ -25,22 +33,22 @@ function Thisrecipe(props) {
                 data-aos-delay="100"
               >
                 <div className="sticky-content">
-                  <h3 className="h3">{props.title}</h3>
+                  <h3 className="h3">{recipe.label}</h3>
                   <p className="mb-4">
-                    <span className="text-muted">{props.cuisineType}</span>
+                    <span className="text-muted">{recipe.cuisineType}</span>
                   </p>
 
                   <h4 className="h4 mb-3">ingredients</h4>
                   <ul className="list-unstyled list-line mb-5">
-                    {ingredients.map((item) => {
-                      return <li>{item.text}</li>;
+                    {recipe.ingredients.map((item, index) => {
+                      return <li key ={index} >{item.text}</li>;
                     })}
                   </ul>
 
                   <p>
-                    <a href="/" className="btn btn-outline-secondary">
-                      Reload
-                    </a>
+                    <button  className="btn btn-outline-secondary" onClick={goBack}>
+                      Go back
+                    </button>
                   </p>
                 </div>
               </div>

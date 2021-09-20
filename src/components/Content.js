@@ -2,8 +2,11 @@ import React from "react";
 import "../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Allrecipes from "./Allrecipes";
+import { useSelector } from 'react-redux';
 
-function Content(props) {
+function Content() {
+  const recipe = useSelector(state => state);
+  // console.log(recipe);
   return (
     <div>
       <main id="main">
@@ -15,7 +18,7 @@ function Content(props) {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              {props.recipe.map((item, index) => {
+              {recipe.map((item, index) => {
                 return (
                   <Allrecipes
                     id={index}
